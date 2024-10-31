@@ -105,14 +105,6 @@
 <div class="viewcode-block" id="CoordinateAttention.forward">
 <a class="viewcode-back" href="../../../api.html#ai_modules_hub.Attention.CoordinateAttention.forward">[文档]</a>
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;CoordinateAttention 的前向传播。</span>
-
-<span class="sd">        参数:</span>
-<span class="sd">            x (torch.Tensor): 输入张量。</span>
-
-<span class="sd">        返回:</span>
-<span class="sd">            torch.Tensor: 应用坐标注意力后的输出张量。</span>
-<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">identity</span> <span class="o">=</span> <span class="n">x</span>
 
         <span class="n">n</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>

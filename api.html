@@ -70,18 +70,16 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="ai_modules_hub.Attention.CoordinateAttention.forward">
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ai_modules_hub/Attention/CoordinateAttention.html#CoordinateAttention.forward"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#ai_modules_hub.Attention.CoordinateAttention.forward" title="Link to this definition">¶</a></dt>
-<dd><p>CoordinateAttention 的前向传播。</p>
-<dl class="field-list simple">
-<dt class="field-odd">返回类型<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Tensor</span></code></span></p>
-</dd>
-</dl>
-<dl class="simple">
-<dt>参数:</dt><dd><p>x (torch.Tensor): 输入张量。</p>
-</dd>
-<dt>返回:</dt><dd><p>torch.Tensor: 应用坐标注意力后的输出张量。</p>
-</dd>
-</dl>
+<dd><p>Define the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.
+:rtype: <span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Tensor</span></code></span></p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
 </dd></dl>
 
 <dl class="py attribute">
