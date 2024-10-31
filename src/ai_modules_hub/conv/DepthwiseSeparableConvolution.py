@@ -44,10 +44,3 @@ class DepthwiseSeparableConvolution(nn.Module):
         x = self.depthwise(x)
         x = self.pointwise(x)
         return x
-
-if __name__ == "__main__":
-    import torch
-    model = DepthwiseSeparableConvolution(in_channels=32, out_channels=64)
-    input_tensor = torch.randn(1, 32, 128, 128)
-    output_tensor = model(input_tensor)
-    print(output_tensor.shape)

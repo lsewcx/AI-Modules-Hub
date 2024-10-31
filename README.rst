@@ -20,7 +20,7 @@ AI-Modules-Hub
 
 
 * Free software: Apache Software License 2.0
-* Documentation: https://ai-modules-hub.readthedocs.io.
+* Documentation: https://lsewcx.github.io/AI-Modules-Hub/.
 
 
 Credits

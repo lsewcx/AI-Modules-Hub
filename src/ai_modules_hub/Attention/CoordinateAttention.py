@@ -68,14 +68,6 @@ class CoordinateAttention(nn.Module):
         self.conv_w = nn.Conv2d(mip, oup, kernel_size=1, stride=1, padding=0)
 
     def forward(self, x) -> torch.Tensor:
-        """CoordinateAttention 的前向传播。
-
-        参数:
-            x (torch.Tensor): 输入张量。
-
-        返回:
-            torch.Tensor: 应用坐标注意力后的输出张量。
-        """
         identity = x
 
         n, c, h, w = x.size()
