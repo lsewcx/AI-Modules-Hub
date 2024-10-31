@@ -23,11 +23,6 @@ AI-Modules-Hub
 * Documentation: https://ai-modules-hub.readthedocs.io.
 
 
-Features
---------
-
-* TODO
-
 Credits
 -------
 
