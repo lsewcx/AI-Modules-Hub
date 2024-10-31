@@ -1,3 +1,3 @@
 from .DepthwiseSeparableConvolution import DepthwiseSeparableConvolution
 
-__all__ = [ 'DepthwiseSeparableConvolution' ]
+__all__ = ['DepthwiseSeparableConvolution']
