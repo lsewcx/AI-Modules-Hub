@@ -8,7 +8,7 @@ Welcome to AI-Modules-Hub's documentation!
    readme
    installation
    usage
-   modules
+   Attention
    contributing
    authors
    history

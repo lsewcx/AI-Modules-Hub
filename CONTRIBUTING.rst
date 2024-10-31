@@ -1,137 +1,127 @@
+以下是将提供的英文贡献指南翻译成中文的内容：
+
 .. highlight:: shell
 
 ============
-Contributing
+贡献指南
 ============
 
-Contributions are welcome, and they are greatly appreciated! Every little bit
-helps, and credit will always be given.
+非常欢迎并感激您的贡献！每一点帮助都非常宝贵，我们将始终给予您相应的认可。
 
-You can contribute in many ways:
+您可以通过以下方式贡献：
 
-Types of Contributions
+贡献类型
 ----------------------
 
-Report Bugs
-~~~~~~~~~~~
+报告 Bug
+~~~~~~~~~~
 
-Report bugs at https://github.com/lsewcx/ai_modules_hub/issues.
+请在 https://github.com/lsewcx/ai_modules_hub/issues 报告 Bug。
 
-If you are reporting a bug, please include:
+如果您报告一个 Bug，请包括以下信息：
 
-* Your operating system name and version.
-* Any details about your local setup that might be helpful in troubleshooting.
-* Detailed steps to reproduce the bug.
+* 您的操作系统名称和版本。
+* 可能有助于排查问题的本地设置详情。
+* 重现 Bug 的详细步骤。
 
-Fix Bugs
+修复 Bug
 ~~~~~~~~
 
-Look through the GitHub issues for bugs. Anything tagged with "bug" and "help
-wanted" is open to whoever wants to implement it.
+查看 GitHub 上的 issues，任何标记为 "bug" 和 "help wanted" 的问题都开放给任何想要实现它的人。
 
-Implement Features
+实现功能
 ~~~~~~~~~~~~~~~~~~
 
-Look through the GitHub issues for features. Anything tagged with "enhancement"
-and "help wanted" is open to whoever wants to implement it.
+查看 GitHub 上的 issues，任何标记为 "enhancement" 和 "help wanted" 的问题都开放给任何想要实现它的人。
 
-Write Documentation
+编写文档
 ~~~~~~~~~~~~~~~~~~~
 
-AI-Modules-Hub could always use more documentation, whether as part of the
-official AI-Modules-Hub docs, in docstrings, or even on the web in blog posts,
-articles, and such.
+AI-Modules-Hub 始终需要更多的文档，无论是官方的 AI-Modules-Hub 文档、docstrings，还是博客文章、网络文章等。代码的文档采用谷歌风格的注释。
 
-Submit Feedback
+提交反馈
 ~~~~~~~~~~~~~~~
 
-The best way to send feedback is to file an issue at https://github.com/lsewcx/ai_modules_hub/issues.
+发送反馈的最佳方式是在 https://github.com/lsewcx/ai_modules_hub/issues 提交 issue。
 
-If you are proposing a feature:
+如果您提议一个功能：
 
-* Explain in detail how it would work.
-* Keep the scope as narrow as possible, to make it easier to implement.
-* Remember that this is a volunteer-driven project, and that contributions
-  are welcome :)
+* 详细解释它的工作原理。
+* 尽可能保持范围狭窄，以便于实现。
+* 请记住这是一个志愿者驱动的项目，欢迎贡献。
 
-Get Started!
+开始吧！
 ------------
 
-Ready to contribute? Here's how to set up `ai_modules_hub` for local development.
+准备贡献？以下是如何为本地开发设置 `ai_modules_hub` 的步骤。
 
-1. Fork the `ai_modules_hub` repo on GitHub.
-2. Clone your fork locally::
+1. 在 GitHub 上 Fork `ai_modules_hub` 仓库。
+2. 克隆您的 Fork 到本地::
 
     $ git clone git@github.com:your_name_here/ai_modules_hub.git
 
-3. Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development::
+3. 安装您的本地副本到虚拟环境中。假设您已安装 virtualenvwrapper，以下是如何为您的 Fork 设置本地开发环境::
 
     $ mkvirtualenv ai_modules_hub
     $ cd ai_modules_hub/
     $ python setup.py develop
 
-4. Create a branch for local development::
+4. 为本地开发创建分支::
 
     $ git checkout -b name-of-your-bugfix-or-feature
 
-   Now you can make your changes locally.
+   现在您可以在本地进行更改。
 
-5. When you're done making changes, check that your changes pass flake8 and the
-   tests, including testing other Python versions with tox::
+5. 完成更改后，检查您的更改是否通过了 flake8 和测试，包括使用 tox 测试其他 Python 版本::
 
     $ make lint
     $ make test
-    Or
+    或者
     $ make test-all
 
-   To get flake8 and tox, just pip install them into your virtualenv.
+   要获取 flake8 和 tox，只需将它们 pip 安装到您的虚拟环境中。
 
-6. Commit your changes and push your branch to GitHub::
+6. 提交您的更改并推送您的分支到 GitHub::
 
     $ git add .
-    $ git commit -m "Your detailed description of your changes."
+    $ git commit -m "您对更改的详细描述。"
     $ git push origin name-of-your-bugfix-or-feature
 
-7. Submit a pull request through the GitHub website.
+7. 通过 GitHub 网站提交 pull request。
 
-Pull Request Guidelines
------------------------
+Pull Request 指南
+-------------------
 
-Before you submit a pull request, check that it meets these guidelines:
+在您提交 pull request 之前，请检查它是否符合以下指南：
 
-1. The pull request should include tests.
-2. If the pull request adds functionality, the docs should be updated. Put
-   your new functionality into a function with a docstring, and add the
-   feature to the list in README.rst.
-3. The pull request should work for Python 3.5, 3.6, 3.7 and 3.8, and for PyPy. Check
-   https://travis-ci.com/lsewcx/ai_modules_hub/pull_requests
-   and make sure that the tests pass for all supported Python versions.
+1. pull request 应包含测试。
+2. 如果 pull request 添加了功能，文档应该更新。将您的新功能放入一个带有 docstring 的函数中，并在 README.rst 的列表中添加该功能。
+3. pull request 应该适用于 Python 3.5、3.6、3.7 和 3.8，以及 PyPy。检查 https://travis-ci.com/lsewcx/ai_modules_hub/pull_requests 并确保所有支持的 Python 版本都通过了测试。
 
-Tips
+提示
 ----
 
-To run a subset of tests::
-
+要运行部分测试::
 
     $ python -m unittest tests.test_ai_modules_hub
 
-Deploying
+部署
 ---------
 
-A reminder for the maintainers on how to deploy.
-Make sure all your changes are committed (including an entry in HISTORY.rst).
-Then run::
+给维护者的提醒，如何部署。
+确保所有更改都已提交（包括 HISTORY.rst 中的条目）。
+然后运行::
 
-$ bump2version patch # possible: major / minor / patch
-$ git push
-$ git push --tags
+    $ bump2version patch # 可能的选项：major / minor / patch
+    $ git push
+    $ git push --tags
 
-Travis will then deploy to PyPI if tests pass.
+Travis 将在测试通过后部署到 PyPI。
 
-Code of Conduct
+行为准则
 ---------------
 
-Please note that this project is released with a `Contributor Code of Conduct`_.
-By participating in this project you agree to abide by its terms.
+请注意，此项目发布时附有 `贡献者行为准则`_。
+通过参与此项目，您同意遵守其条款。
 
-.. _`Contributor Code of Conduct`: CODE_OF_CONDUCT.rst
+.. _`贡献者行为准则`: CODE_OF_CONDUCT.rst

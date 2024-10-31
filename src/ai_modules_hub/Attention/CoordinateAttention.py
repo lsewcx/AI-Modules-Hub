@@ -22,18 +22,28 @@ class h_swish(nn.Module):
 
 class CoordinateAttention(nn.Module):
     """
-    论文地址:https://arxiv.org/pdf/2103.02907
-    github源码地址:https://github.com/houqb/CoordAttention/blob/main/coordatt.py
+    CoordinateAttention 是一种注意力机制，旨在增强卷积神经网络（CNN）的表示能力。
+
+    论文地址:
+        https://arxiv.org/pdf/2103.02907
+
+    GitHub 源码地址:
+        https://github.com/houqb/CoordAttention/blob/main/coordatt.py
+
+    优点:
+        - CoordinateAttention 可以有效地捕捉图像中的长距离依赖关系，这对于处理具有复杂结构的图像非常有用。
+        - 通过分离通道注意力和空间注意力，CoordinateAttention 能够更好地保留和利用空间信息，从而提高模型的表示能力。
+        - 相较于其他注意力机制（如自注意力机制），CoordinateAttention 更加轻量级，计算成本较低，适合在资源受限的环境中使用。
+        - 这种注意力机制可以很容易地集成到现有的卷积神经网络架构中，无需对原有网络进行大幅度修改。
     """
 
     def __init__(self, inp, oup, reduction=32):
-        """
-        初始化 CoordinateAttention 模块。
+        """初始化 CoordinateAttention 模块。
 
         参数:
-        inp (int): 输入通道数。
-        oup (int): 输出通道数。
-        reduction (int): 通道缩减比例，默认为32。
+            inp (int): 输入通道数。
+            oup (int): 输出通道数。
+            reduction (int): 通道缩减比例，默认为 32。
         """
         super(CoordinateAttention, self).__init__()
         self.pool_h = nn.AdaptiveAvgPool2d((None, 1))
@@ -49,6 +59,14 @@ class CoordinateAttention(nn.Module):
         self.conv_w = nn.Conv2d(mip, oup, kernel_size=1, stride=1, padding=0)
 
     def forward(self, x) -> torch.Tensor:
+        """CoordinateAttention 的前向传播。
+
+        参数:
+            x (torch.Tensor): 输入张量。
+
+        返回:
+            torch.Tensor: 应用坐标注意力后的输出张量。
+        """
         identity = x
 
         n, c, h, w = x.size()
@@ -69,14 +87,3 @@ class CoordinateAttention(nn.Module):
         out = identity * a_w * a_h
 
         return out
-
-
-if __name__ == "__main__":
-    in_channels = 64
-    out_channels = 64
-    reduction = 32
-    x = torch.randn(1, in_channels, 64, 64)
-    model = CoordinateAttention(in_channels, out_channels, reduction)
-    out = model(x)
-    print(out.shape)
-    assert out.shape == x.shape, "CoordinateAttention shape error"
