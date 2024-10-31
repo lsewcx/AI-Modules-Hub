@@ -1,14 +1,12 @@
-import pytest
 import torch
-import torch.nn as nn
-from ai_modules_hub.Attention import CoordinateAttention
 
-class TestCoordinateAttention:
+from ai_modules_hub.conv import DepthwiseSeparableConvolution
+
+class TestDepthwiseSeparableConvolution:
     def test_forward(self):
         in_channels = 64
         out_channels = 64
-        reduction = 32
-        model = CoordinateAttention(in_channels, out_channels, reduction)
+        model = DepthwiseSeparableConvolution(in_channels, out_channels)
         
         input_tensor = torch.randn(1, in_channels, 32, 32)
         output_tensor = model(input_tensor)

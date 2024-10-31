@@ -35,6 +35,15 @@ class CoordinateAttention(nn.Module):
         - 通过分离通道注意力和空间注意力，CoordinateAttention 能够更好地保留和利用空间信息，从而提高模型的表示能力。
         - 相较于其他注意力机制（如自注意力机制），CoordinateAttention 更加轻量级，计算成本较低，适合在资源受限的环境中使用。
         - 这种注意力机制可以很容易地集成到现有的卷积神经网络架构中，无需对原有网络进行大幅度修改。
+
+    示例:
+        >>> import torch
+        >>> from ai_modules_hub.Attention import CoordinateAttention
+        >>> model = CoordinateAttention(inp=64, oup=64, reduction=32)
+        >>> x = torch.randn(1, 64, 32, 32)
+        >>> output = model(x)
+        >>> print(output.shape)
+        torch.Size([1, 64, 32, 32])
     """
 
     def __init__(self, inp, oup, reduction=32):
