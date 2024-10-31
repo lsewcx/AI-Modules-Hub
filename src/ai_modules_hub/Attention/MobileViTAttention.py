@@ -1,7 +1,10 @@
 import torch
 import torch.nn as nn
 
-from einops import rearrange
+try:
+    from einops import rearrange
+except ImportError:
+    raise ImportError("Please install einops with `pip install einops`.")
 
 
 def conv_1x1_bn(inp, oup):

@@ -10,3 +10,4 @@ sphinx-autodoc-typehints
 pytest
 torch
 flake8
+einops
