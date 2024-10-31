@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai_modules_hub"
+version = "0.1.0"
+description = "一个集合各种ai模块的仓库"
+readme = "README.rst"
+authors = [
+  {name = "lse", email = "lse210085@163.com"}
+]
+maintainers = [
+  {name = "lse", email = "lse210085@163.com"}
+]
+classifiers = [
+
+]
+license = {text = "Apache Software License 2.0"}
+dependencies = [
+  
+]
+
+[project.optional-dependencies]
+dev = [
+    "coverage",  # testing
+    "mypy",  # linting
+    "pytest",  # testing
+    "ruff"  # linting
+]
+
+[project.urls]
+
+bugs = "https://github.com/lsewcx/ai_modules_hub/issues"
+changelog = "https://github.com/lsewcx/ai_modules_hub/blob/master/changelog.md"
+homepage = "https://github.com/lsewcx/ai_modules_hub"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.package-data]
+"*" = ["*.*"]
+
+
+
+
+# Mypy
+# ----
+
+[tool.mypy]
+files = "."
+
+# Use strict defaults
+strict = true
+warn_unreachable = true
+warn_no_return = true
+
+[[tool.mypy.overrides]]
+# Don't require test functions to include types
+module = "tests.*"
+allow_untyped_defs = true
+disable_error_code = "attr-defined"
+
