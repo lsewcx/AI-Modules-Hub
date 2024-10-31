@@ -5,8 +5,6 @@
 
 import unittest
 
-from ai_modules_hub import ai_modules_hub
-
 
 class TestAi_modules_hub(unittest.TestCase):
     """Tests for `ai_modules_hub` package."""

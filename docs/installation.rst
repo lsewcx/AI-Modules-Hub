@@ -1,51 +1,41 @@
 .. highlight:: shell
 
 ============
-Installation
+安装
 ============
 
-
-Stable release
+稳定版本(注意现在还是开发版本并没有上传pypi)
 --------------
 
-To install AI-Modules-Hub, run this command in your terminal:
+要安装 AI-Modules-Hub，请在您的终端运行以下命令：
 
 .. code-block:: console
 
     $ pip install ai_modules_hub
 
-This is the preferred method to install AI-Modules-Hub, as it will always install the most recent stable release.
+这是安装 AI-Modules-Hub 推荐的方法，因为它将始终安装最新的稳定版本。
 
-If you don't have `pip`_ installed, this `Python installation guide`_ can guide
-you through the process.
+如果您没有安装 `pip`_，这个指南可以指导您完成安装过程。
 
-.. _pip: https://pip.pypa.io
+.. _pip: https://pip.pypa.io/
 .. _Python installation guide: http://docs.python-guide.org/en/latest/starting/installation/
 
-
-From sources
+从源代码安装
 ------------
 
-The sources for AI-Modules-Hub can be downloaded from the `Github repo`_.
+AI-Modules-Hub 的源代码可以从 Github 仓库 下载。
 
-You can either clone the public repository:
+您可以直接克隆公共仓库：
 
 .. code-block:: console
 
     $ git clone git://github.com/lsewcx/ai_modules_hub
 
-Or download the `tarball`_:
+一旦您有了源代码副本，您可以使用以下命令进行安装：
 
 .. code-block:: console
 
-    $ curl -OJL https://github.com/lsewcx/ai_modules_hub/tarball/master
-
-Once you have a copy of the source, you can install it with:
-
-.. code-block:: console
-
-    $ python setup.py install
-
+    $ pip intall -e .
 
 .. _Github repo: https://github.com/lsewcx/ai_modules_hub
 .. _tarball: https://github.com/lsewcx/ai_modules_hub/tarball/master

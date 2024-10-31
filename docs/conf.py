@@ -19,8 +19,7 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('..'))
-
+sys.path.insert(0, os.path.abspath('../src'))
 import ai_modules_hub
 
 # -- General configuration ---------------------------------------------
@@ -31,7 +30,7 @@ import ai_modules_hub
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.viewcode']
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.viewcode','sphinx_autodoc_typehints','sphinx.ext.napoleon']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -64,7 +63,7 @@ release = ai_modules_hub.__version__
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = 'zh_CN'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -155,8 +154,4 @@ texinfo_documents = [
      author,
      'ai_modules_hub',
      'One line description of project.',
-     'Miscellaneous'),
-]
-
-
-
+     'Miscellaneous'),]
