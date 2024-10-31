@@ -1,3 +1,3 @@
 from .CoordinateAttention import CoordinateAttention
-
-__all__ = ['CoordinateAttention']
+from .MobileViTAttention import MobileViTAttention
+__all__ = ['CoordinateAttention', 'MobileViTAttention']
