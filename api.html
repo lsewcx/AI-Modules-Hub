@@ -206,6 +206,39 @@ registered hooks while the latter silently ignores them.</p>
 <section id="backbone-module">
 <h2>Backbone Module<a class="headerlink" href="#backbone-module" title="Link to this heading">¶</a></h2>
 </section>
+<section id="module-ai_modules_hub.Head">
+<span id="head-module"></span><h2>Head Module<a class="headerlink" href="#module-ai_modules_hub.Head" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ai_modules_hub.Head.SSDHead">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ai_modules_hub.Head.</span></span><span class="sig-name descname"><span class="pre">SSDHead</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_channels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_anchors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_classes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ai_modules_hub/Head/ssd_head.html#SSDHead"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#ai_modules_hub.Head.SSDHead" title="Link to this definition">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<dl class="simple">
+<dt>github代码地址:</dt><dd><p><a class="reference external" href="https://github.com/pytorch/vision/blob/main/torchvision/models/detection/ssd.py">https://github.com/pytorch/vision/blob/main/torchvision/models/detection/ssd.py</a></p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_modules_hub.Head.SSDHead.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ai_modules_hub/Head/ssd_head.html#SSDHead.forward"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#ai_modules_hub.Head.SSDHead.forward" title="Link to this definition">¶</a></dt>
+<dd><p>Define the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.
+:rtype: <span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Tensor</span></code>]</span></p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai_modules_hub.Head.SSDHead.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></em><a class="headerlink" href="#ai_modules_hub.Head.SSDHead.training" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
 </section>
 
 
@@ -241,6 +274,10 @@ registered hooks while the latter silently ignores them.</p>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#backbone-module">Backbone Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-ai_modules_hub.Head">Head Module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ai_modules_hub.Head.SSDHead"><code class="docutils literal notranslate"><span class="pre">SSDHead</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">贡献指南</a></li>
