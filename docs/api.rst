@@ -28,3 +28,11 @@ Backbone Module
    :members:
    :undoc-members:
    :show-inheritance:
+
+Head Module
+-----------
+
+.. automodule:: ai_modules_hub.Head
+   :members:
+   :undoc-members:
+   :show-inheritance:
