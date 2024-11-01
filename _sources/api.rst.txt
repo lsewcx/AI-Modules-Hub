@@ -20,3 +20,11 @@ Conv Module
    :members:
    :undoc-members:
    :show-inheritance:
+
+Backbone Module
+-----------
+
+.. automodule:: ai_modules_hub.Backbone
+   :members:
+   :undoc-members:
+   :show-inheritance:
