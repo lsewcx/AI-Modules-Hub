@@ -36,3 +36,11 @@ Head Module
    :members:
    :undoc-members:
    :show-inheritance:
+
+Loss Module
+-----------
+
+.. automodule:: ai_modules_hub.utils.loss
+   :members:
+   :undoc-members:
+   :show-inheritance:
