@@ -239,6 +239,66 @@ registered hooks while the latter silently ignores them.</p>
 </dd></dl>
 
 </section>
+<section id="module-ai_modules_hub.utils.loss">
+<span id="loss-module"></span><h2>Loss Module<a class="headerlink" href="#module-ai_modules_hub.utils.loss" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ai_modules_hub.utils.loss.FocalLoss">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ai_modules_hub.utils.loss.</span></span><span class="sig-name descname"><span class="pre">FocalLoss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size_average</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ai_modules_hub/utils/loss/FocalLoss.html#FocalLoss"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#ai_modules_hub.utils.loss.FocalLoss" title="Link to this definition">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>FocalLoss 是一种用于处理类别不平衡问题的损失函数。</p>
+<dl>
+<dt>论文地址:</dt><dd><p><a class="reference external" href="https://arxiv.org/abs/1708.02002">https://arxiv.org/abs/1708.02002</a></p>
+</dd>
+<dt>优点:</dt><dd><ul class="simple">
+<li><p>FocalLoss 可以有效地处理类别不平衡问题，通过调整易分类样本的权重，减少其对损失的影响。</p></li>
+<li><p>通过引入调节因子 γ，FocalLoss 可以更好地聚焦难分类样本，提高模型的泛化能力。</p></li>
+<li><p>FocalLoss 可以与现有的目标检测模型（如 SSD、RetinaNet 等）无缝集成，提升检测性能。</p></li>
+</ul>
+</dd>
+<dt>示例:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ai_modules_hub.utils.loss</span> <span class="kn">import</span> <span class="n">FocalLoss</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">criterion</span> <span class="o">=</span> <span class="n">FocalLoss</span><span class="p">(</span><span class="n">gamma</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="p">[</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">target</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">)</span><span class="o">.</span><span class="n">random_</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd>
+<dt>参数:</dt><dd><dl class="simple">
+<dt>alpha (float or list of float, optional): 类别权重。当 alpha 是列表时，为各类别权重；</dt><dd><p>当 alpha 为常数时，类别权重为 [α, 1-α, 1-α, …]。常用于目标检测算法中抑制背景类。
+默认值为 None。</p>
+</dd>
+</dl>
+<p>gamma (float, optional): 难易样本调节参数。默认值为 2。
+num_classes (int, optional): 类别数量。默认值为 2。
+size_average (bool, optional): 损失计算方式，是否取均值。默认值为 True。</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_modules_hub.utils.loss.FocalLoss.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">preds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ai_modules_hub/utils/loss/FocalLoss.html#FocalLoss.forward"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#ai_modules_hub.utils.loss.FocalLoss.forward" title="Link to this definition">¶</a></dt>
+<dd><p>计算 FocalLoss 损失。</p>
+<dl>
+<dt>参数:</dt><dd><dl class="simple">
+<dt>preds (torch.Tensor): 预测类别。尺寸为 [B, N, C] 或 [B, C]，分别对应检测和分类任务。</dt><dd><p>B 为批次大小，N 为检测框数，C 为类别数。</p>
+</dd>
+</dl>
+<p>labels (torch.Tensor): 实际类别。尺寸为 [B, N] 或 [B]。</p>
+</dd>
+<dt>返回:</dt><dd><p>torch.Tensor: 计算得到的损失值。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai_modules_hub.utils.loss.FocalLoss.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></em><a class="headerlink" href="#ai_modules_hub.utils.loss.FocalLoss.training" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
 </section>
 
 
@@ -276,6 +336,10 @@ registered hooks while the latter silently ignores them.</p>
 <li class="toctree-l2"><a class="reference internal" href="#backbone-module">Backbone Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-ai_modules_hub.Head">Head Module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#ai_modules_hub.Head.SSDHead"><code class="docutils literal notranslate"><span class="pre">SSDHead</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-ai_modules_hub.utils.loss">Loss Module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ai_modules_hub.utils.loss.FocalLoss"><code class="docutils literal notranslate"><span class="pre">FocalLoss</span></code></a></li>
 </ul>
 </li>
 </ul>
